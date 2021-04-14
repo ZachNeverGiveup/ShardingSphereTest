@@ -1,0 +1,33 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: sharding-sphere-test
+  shardingsphere:
+    datasource:
+      name: ds
+      ds:
+        type: com.zaxxer.hikari.HikariDataSource
+        driverClassName: com.mysql.cj.jdbc.Driver
+        jdbc-url: jdbc:mysql://localhost:3306/sharding?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true
+        username: root
+        password: 123456
+    encrypt:
+      encryptors:
+        aes_encryptor:
+          type: AES
+          props:
+            aes:
+              key:
+                value: 123456abc
+      tables:
+        t_user:
+          columns:
+            pwd:
+              plainColumn: pwd_plain
+              cipherColumn: pwd_cipher
+              encryptor: aes_encryptor
+    props:
+      sql:
+        show: true
+      query-with-cipher-column: false
