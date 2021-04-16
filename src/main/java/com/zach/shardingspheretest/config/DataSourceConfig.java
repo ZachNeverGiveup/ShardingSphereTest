@@ -31,6 +31,7 @@ public class DataSourceConfig {
     }
     private static EncryptRuleConfiguration getEncryptRuleConfiguration() {
         Properties props = new Properties();
+        //todo 下面 AES 的盐 通过http请求的方式获取并缓存起来，不暴露给开发者
         props.setProperty("aes.key.value", "123456");
         EncryptorRuleConfiguration encryptorConfig = new EncryptorRuleConfiguration("AES", props);
         EncryptColumnRuleConfiguration columnConfig = new EncryptColumnRuleConfiguration("pwd_plain", "pwd_cipher", "", "aes");

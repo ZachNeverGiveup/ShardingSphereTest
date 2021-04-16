@@ -4,8 +4,8 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication
 @MapperScan("com.zach.shardingspheretest.mapper")
+@SpringBootApplication
 public class ShardingSphereTestApplication {
 
     public static void main(String[] args) {
