@@ -7,9 +7,9 @@ spring:
     datasource:
       name: ds
       ds:
-        type: com.zaxxer.hikari.HikariDataSource
+        type: com.alibaba.druid.pool.DruidDataSource
         driverClassName: com.mysql.cj.jdbc.Driver
-        jdbc-url: jdbc:mysql://localhost:3306/sharding?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true
+        url: jdbc:mysql://localhost:3306/sharding?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true
         username: root
         password: 123456
     encrypt:
@@ -19,7 +19,7 @@ spring:
           props:
             aes:
               key:
-                value: 123456abc
+                value: 123456
       tables:
         t_user:
           columns:

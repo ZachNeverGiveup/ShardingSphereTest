@@ -14,9 +14,9 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.sql.DataSource;
 
-@Configuration
-@MapperScan(basePackages = "com.zach.shardingspheretest.mapper", sqlSessionFactoryRef = "primarySqlSessionFactory")
-@EnableTransactionManagement
+//@Configuration
+//@MapperScan(basePackages = "com.zach.shardingspheretest.mapper", sqlSessionFactoryRef = "primarySqlSessionFactory")
+//@EnableTransactionManagement
 public class PrimaryConfig {
 
     static final String MAPPER_LOCATION = "classpath:com/zach/shardingspheretest/mapper/*.xml";
